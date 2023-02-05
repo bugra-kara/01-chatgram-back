@@ -113,6 +113,7 @@ const updateOneChatRead = async (req, res)=> {
     })
 }
 const getAllChats = async (req, res) => {
+    console.log(req)
     const {id} = req.params
     const userExist = await User.findOne({_id: id})
     if(userExist) {
