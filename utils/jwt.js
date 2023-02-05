@@ -29,14 +29,14 @@ const attachCookiesToResponse = ({ res, user, refreshToken }) => {
   res.cookie('accessToken', accessTokenJWT, {
     secure: true,
     httpOnly: true,
-    sameSite: "none",
+    sameSite: "strict",
     expires: new Date(Date.now() + oneDay),
   });
 
   res.cookie('refreshToken', refreshTokenJWT, {
     secure: true,
     httpOnly: true,
-    sameSite: "none",
+    sameSite: "strict",
     expires: new Date(Date.now() + longerExp),
   });
 };
